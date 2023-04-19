@@ -467,18 +467,27 @@
                   <div class="col s12 m6 l6">
                     <div class="card">
                       <div class="card-image">
-                        <img src="/assets/img/Sololearn_Certificate.jpg">
+                        <img id="myImg" src="/assets/img/cert1.jpg" style="width:100%;max-width:500px">
+                          <div id="myModal" class="modal">
+                            <span class="close">&times;</span>
+                            <img class="modal-content" id="img01">
+                            <div id="caption"></div>
+                          </div>
                       </div>
                       <div class="card-content">
                         <span class="card-title teal-text">Web Development Fundamentals</span>
                       </div>
                     </div>
                   </div>
-
                   <div class="col s12 m6 l6">
                     <div class="card">
                       <div class="card-image">
-                        <img src="/assets/img/Tech_For_everyone.jpg">
+                        <img src="/assets/img/cert2.jpg" id="cert">
+                          <div id="myModal" class="modal">
+                            <span class="close">&times;</span>
+                            <img class="modal-content" id="img02">
+                            <div id="caption"></div>
+                          </div>
                       </div>
                       <div class="card-content">
                         <span class="card-title teal-text">Tech For Everyone</span>
@@ -486,7 +495,37 @@
                     </div>
                   </div>
                 </div>
+                <div class="col s12 m6 l6">
+                  <div class="card">
+                    <div class="card-image">
+                      <img src="/assets/img/cert3.jpg" id="cert">
+                        <div id="myModal" class="modal">
+                          <span class="close">&times;</span>
+                          <img class="modal-content" id="img03">
+                          <div id="caption"></div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                      <span class="card-title teal-text">Introduction to JavaScript</span>
+                    </div>
+                  </div>
               </div>
+              <div class="col s12 m6 l6">
+                <div class="card">
+                  <div class="card-image">
+                    <img src="/assets/img/cert3.jpg" id="cert">
+                      <div id="myModal" class="modal">
+                        <span class="close">&times;</span>
+                        <img class="modal-content" id="img03">
+                        <div id="caption"></div>
+                      </div>
+                  </div>
+                  <div class="card-content">
+                    <span class="card-title teal-text">Introduction to JavaScript</span>
+                  </div>
+                </div>
+            </div>
+            </div>
             </div>
           </div>
         </div>
@@ -594,7 +633,28 @@
         closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
       })
     })
-  </script>
+  
+    // Get the modal
+    var modal = document.getElementById("myModal");
+    
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("myImg");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function(){
+      modal.style.display = "block";
+      modalImg.src = this.src;
+      captionText.innerHTML = this.alt;
+    }
+    
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() { 
+      modal.style.display = "none";
+    }
+    </script>
 
 
 </body>
